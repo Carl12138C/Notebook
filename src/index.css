@@ -1,13 +1,201 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas,
+		'Courier New', monospace;
+}
+
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dark-mode{
+    background-color: black;
+}
+
+.dark-mode h1{
+    color: white;
+}
+
+.container{
+    max-width:960px;
+    margin-right:auto;
+    margin-left:auto;
+    padding-right: 15px;
+    padding-left:15px;
+    min-height: 100vh;
+
+}
+.notes-list{
+    display: grid;
+    grid-gap:1rem;
+    grid-template-columns: repeat(4,230px);
+}
+textarea{
+    border: none;
+    resize: none;
+}
+textarea:focus{
+    outline: none;
+}
+.save{
+    background-color: #f0f1f2;
+    border: none;
+    border-radius: 15px;
+    padding:5px 10px 5px 10px;
+}
+.save:hover{
+    background-color: #e1e9f5;
+    cursor:pointer;
+}
+
+.note{
+    background-color: #a1f0c7;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:15PX;
+    padding-top:5px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow: hidden;    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 20px;
+    cursor: pointer;
+}
+.note.new{
+    background-color: #9df5fa;
+    cursor:default;
+}
+.note-header{
+    display:flex;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    overflow:hidden;
+    font-size:30px;
+    background-color: #a1f0c7 ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-right: 15px;
+    height:30px;
+    cursor: pointer;
+}
+.note-header.new{
+    background-color: #9df5fa;
+    font-size:30px;
+}
+.note-footer{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:20px;
+    background-color: #a1f0c7 ;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 15px;
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-right:10px;
+    cursor: pointer;
+}
+.note-footer.new{
+    background-color: #9df5fa;
+    cursor:default;
+}
+
+.note-count-display{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:20px;
+}
+.input-note{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:16px;
+    height:100%;
+    background-color:#9df5fa ;
+
+}
+.input-header{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:30px;
+    background-color:#9df5fa ;
+}
+.delete-icon {
+    cursor:pointer
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    background-color: rgb(233,233,233);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 1.5em;
+}
+
+.search input{
+    border:none;
+    background-color: rgb(233,233,233);
+    width:100%; 
+}
+
+.search input:focus{
+    outline: none;
+}
+
+.modal {
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position: fixed;
+}
+.overlay {
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position: fixed;
+}
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    width: 920px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
 }
